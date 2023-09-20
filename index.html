@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <script>
+        function add() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("output").innerHTML = "Error: Please enter valid numbers";
+            } else {
+                var result = num1 + num2;
+                document.getElementById("output").innerHTML = "Addition: " + result;
+            }
+        }
+
+        function subtract() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("output").innerHTML = "Error: Please enter valid numbers";
+            } else {
+                var result = num1 - num2;
+                document.getElementById("output").innerHTML = "Subtraction: " + result;
+            }
+        }
+
+        function multiply() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("output").innerHTML = "Error: Please enter valid numbers";
+            } else {
+                var result = num1 * num2;
+                document.getElementById("output").innerHTML = "Multiplication: " + result;
+            }
+        }
+
+        function divide() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("output").innerHTML = "Error: Please enter valid numbers";
+            } else if (num2 === 0) {
+                document.getElementById("output").innerHTML = "Error: Division by zero is not allowed";
+            } else {
+                var result = num1 / num2;
+                document.getElementById("output").innerHTML = "Division: " + result.toFixed(2);
+            }
+        }
+
+        function clearFields() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("output").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <label for="num1">Number 1:</label>
+    <input type="text" id="num1"><br><br>
+    <label for="num2">Number 2:</label>
+    <input type="text" id="num2"><br><br>
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <button onclick="clearFields()">Clear</button>
+    <br><br>
+    <div id="output"></div>
+</body>
+</html>
